@@ -15,7 +15,7 @@ It will:
 import json
 
 data = {}
-with open('coleta_bbb_pt_new.json', 'r') as f:
+with open('data.json', 'r') as f:
     data = json.load(f)
 
 participants = {}
@@ -23,16 +23,25 @@ participants['Amanda'] = []
 participants['Aline'] = []
 participants['Bruna'] = []
 
+count = 0
+
 for tweet in data:
-    if any('amanda' in person.lower() for person in tweet['people_cited']):
+    if 'amanda' in tweet['text'].lower():
         participants['Amanda'].append(tweet)
 
-    if any('aline' in person.lower() for person in tweet['people_cited']):
+    if 'aline' in tweet['text'].lower():
         participants['Aline'].append(tweet)
 
-    if any('bruna' in person.lower() for person in tweet['people_cited']):
+    if 'bruna' in tweet['text'].lower():
         participants['Bruna'].append(tweet)
+
+    count += 1
+    print(f'Processing tweet {count} of {len(data)}')
+
+print('Saving files...')
 
 for key, value in participants.items():
     with open(f'participantes/{key}.json', 'w') as f:
         json.dump(value, f, ensure_ascii=False, indent=4, sort_keys=True)
+
+print('Done!')
