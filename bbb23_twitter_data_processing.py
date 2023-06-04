@@ -2,7 +2,7 @@
 BBB23 Twitter Data Processing
 
 author: Anderson Sprenger, Gabriel Souza, Vinicius Dias
-email: anderson.sprenger@edu.pucrs.br
+email: anderson.sprenger@edu.pucrs.br, gabrielzds03@gmail.com, 
 date: June 04, 2023
 
 This script is used to process the twitter data of the BBB23 Final extracted by tweet utils.
