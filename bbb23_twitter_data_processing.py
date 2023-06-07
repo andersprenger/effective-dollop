@@ -19,21 +19,21 @@ with open('data.json', 'r') as f:
     data = json.load(f)
 
 participants = {}
-participants['Amanda'] = []
-participants['Aline'] = []
-participants['Bruna'] = []
+participants['Domitila'] = []
+participants['Domi'] = []
+# participants['Bruna'] = []
 
 count = 0
 
 for tweet in data:
-    if 'amanda' in tweet['text'].lower():
-        participants['Amanda'].append(tweet)
+    if 'domitila' in tweet['text'].lower():
+        participants['Domitila'].append(tweet)
 
-    if 'aline' in tweet['text'].lower():
-        participants['Aline'].append(tweet)
+    if 'domi' in tweet['text'].lower():
+        participants['Domi'].append(tweet)
 
-    if 'bruna' in tweet['text'].lower():
-        participants['Bruna'].append(tweet)
+    # if 'bruna' in tweet['text'].lower():
+    #     participants['Bruna'].append(tweet)
 
     count += 1
     print(f'Processing tweet {count} of {len(data)}')
